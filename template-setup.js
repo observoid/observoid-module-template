@@ -45,6 +45,7 @@ async function main() {
   } while (!author);
   packageJson.author = author;
   fs.writeFileSync('package.json', JSON.stringify(packageJson));
+  fs.writeFileSync('README.md', `# @observoid/${packageName}\n${description}`);
   fs.unlinkSync('template-setup.js');
   console.info('Complete!');
 }
